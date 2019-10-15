@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <ul>
       <li v-for="(item,index) in users " :key="index">
-        {{item.name}}
+        {{item.id}}{{item.name}}
       </li>
     </ul>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -25,7 +25,7 @@ export default {
     }
   },
   mounted(){
-    axios.get('http://localhost:3000/api/users').then(res=>{
+    axios.get('/api/users').then(res=>{
       this.users = res.data;
     })
   }
